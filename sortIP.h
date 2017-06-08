@@ -1,8 +1,8 @@
 #ifndef SORT_IP_H
 #define SORT_IP_H
 
-#define sortIP_VERSION_MAJOR 
-#define sortIP_VERSION_MINOR 
+#define sortIP_VERSION_MAJOR 1
+#define sortIP_VERSION_MINOR 0
 #define PREFIX "_sorted"
 
 #include <sys/stat.h>
