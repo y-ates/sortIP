@@ -23,11 +23,11 @@ class sortIP {
 	sortIP(const std::string path);
 	~sortIP();
 
-	std::vector<std::string> splitString(std::string input, char split_character);
+	std::vector<std::string> splitString(std::string input, char split_character) const;
 	inline bool set_file(const std::string path);
-	inline bool file_exists(const std::string file_path);
+	inline bool file_exists(const std::string file_path) const;
 	bool file_to_vector();
-	bool vector_to_file();
+	bool vector_to_file() const;
 	bool sortIPs();
 
 };

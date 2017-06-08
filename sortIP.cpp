@@ -18,7 +18,7 @@ sortIP::~sortIP(){
 /**
  * See if file exists. Very fast.
  */
-inline bool sortIP::file_exists(const string file_path){
+inline bool sortIP::file_exists(const string file_path) const{
 	struct stat buffer;   
 	return (stat (file_path.c_str(), &buffer) == 0); 
 }
@@ -59,7 +59,7 @@ bool sortIP::file_to_vector(){
  * After sorting is done the vector can be written back into a file again.
  * TODO: Check what could go wrong.
  */
-bool sortIP::vector_to_file(){
+bool sortIP::vector_to_file() const{
 	string sorted_filename;
 	char dot = '.';
 	vector<string> tmp;
@@ -79,7 +79,7 @@ bool sortIP::vector_to_file(){
 /**
  * Split a string by a given character.
  */
-vector<string> sortIP::splitString(string input, char split_character){
+vector<string> sortIP::splitString(string input, char split_character) const{
 	string cut_string;
 	vector<string> result;
 	stringstream input_stream;
