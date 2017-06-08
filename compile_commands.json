@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/home/yakup/Dokumente/GIT/sortIP",
+  "command": "/usr/bin/c++    -I/home/yakup/Dokumente/GIT/sortIP    -o CMakeFiles/sortIP.dir/main.cpp.o -c /home/yakup/Dokumente/GIT/sortIP/main.cpp",
+  "file": "/home/yakup/Dokumente/GIT/sortIP/main.cpp"
+},
+{
+  "directory": "/home/yakup/Dokumente/GIT/sortIP",
+  "command": "/usr/bin/c++    -I/home/yakup/Dokumente/GIT/sortIP    -o CMakeFiles/sortIP.dir/sortIP.cpp.o -c /home/yakup/Dokumente/GIT/sortIP/sortIP.cpp",
+  "file": "/home/yakup/Dokumente/GIT/sortIP/sortIP.cpp"
+}
+]
