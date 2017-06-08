@@ -6,6 +6,7 @@
 #define PREFIX "_sorted"
 
 #include <sys/stat.h>
+#include <arpa/inet.h>
 #include <iostream>
 #include <fstream>
 #include <sstream>
@@ -17,6 +18,7 @@
 class sortIP {
  private:
 	std::string file_path;
+	std::string output_filename;
 	std::vector<std::string> vector_from_file;
  public:
 	sortIP();
@@ -27,7 +29,7 @@ class sortIP {
 	inline bool set_file(const std::string path);
 	inline bool file_exists(const std::string file_path) const;
 	bool file_to_vector();
-	bool vector_to_file() const;
+	bool vector_to_file();
 	bool sortIPs();
 
 };
