@@ -18,11 +18,35 @@
  */
 
 #include "sortIP.h"
+#include "cxxopts.hpp"
 
 int main(int argc, char* argv[]){
-	sortIP ip_sorter("test/ip_list.txt");
-	//sortIP ip_sorter;
+	try{
+		cxxopts::Options options(argv[0], "Sorts IP adresses, given by file.");
+		options.add_options()
+			("f,file", "File name", cxxopts::value<std::string>());
 
+		options.add_options()
+			("h,help", "Help; not really :D");
+
+		options.parse(argc, argv);
+
+		if(options.count("f")){
+			std::string file_path_argv = options["f"].as<std::string>();
+			sortIP ip_sorter(file_path_argv);
+			return 0;
+		}
+
+		if(options.count("h")){
+			std::cout << "You should point me to a file containing ip adresses: "
+				  << argv[0] << " -f [file-with-ip_adresses]"
+				  << std::endl;
+			return 0;
+		}
+	} catch (const cxxopts::OptionException& e){
+		std::cout << "error parsing options: " << e.what() << std::endl;
+		return 1;
+	}
 	
 	return 0;
 }
