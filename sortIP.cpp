@@ -1,3 +1,22 @@
+/*
+ * Sorts IP adresses, given by file.
+ *   
+ * Copyright (C) 2017 Yakup Ates <Yakup.Ates@rub.de>
+ *
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ *
+ * This program is distributed in the hope that it will be useful,
+ * but WITHOUT ANY WARRANTY; without even the implied warranty of
+ * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ * GNU General Public License for more details.
+ *
+ * You should have received a copy of the GNU General Public License
+ * along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ */
+
 #include "sortIP.h"
 
 using namespace std;
@@ -19,7 +38,8 @@ sortIP::~sortIP(){
  * See if file exists. Very fast.
  */
 inline bool sortIP::file_exists(const string& file_path) const{
-	struct stat buffer;   
+	struct stat buffer;
+	
 	return (stat (file_path.c_str(), &buffer) == 0); 
 }
 
@@ -61,16 +81,14 @@ bool sortIP::file_to_vector(){
  */
 bool sortIP::vector_to_file(){
 	char dot = '.';
-	vector<string> tmp;
-
-	tmp = splitString(file_path, dot);
+	
+	vector<string> tmp = splitString(file_path, dot);
 	output_filename = tmp[0] + PREFIX + dot + tmp[1];
 	tmp.clear();
 	
 	ofstream output_file_stream(output_filename.c_str());
 	ostream_iterator<string> output_iterator(output_file_stream, "\n");
 	copy(vector_from_file.begin(), vector_from_file.end(), output_iterator);
-
 
 	return true;
 }
