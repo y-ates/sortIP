@@ -6,7 +6,7 @@ sortIP::sortIP(){
 	cout << "[#] Note: No file to sort given. Exit." << endl;
 }
 
-sortIP::sortIP(const string path){
+sortIP::sortIP(const string& path){
 	set_file(path);
 	sortIPs();
 }
@@ -18,7 +18,7 @@ sortIP::~sortIP(){
 /**
  * See if file exists. Very fast.
  */
-inline bool sortIP::file_exists(const string file_path) const{
+inline bool sortIP::file_exists(const string& file_path) const{
 	struct stat buffer;   
 	return (stat (file_path.c_str(), &buffer) == 0); 
 }
@@ -26,7 +26,7 @@ inline bool sortIP::file_exists(const string file_path) const{
 /**
  * Validate given path to file and set if valid.
  */
-inline bool sortIP::set_file(const std::string path){
+inline bool sortIP::set_file(const std::string& path){
 	if(file_exists(path)){
 		file_path = path;
 		return true;
@@ -78,7 +78,7 @@ bool sortIP::vector_to_file(){
 /**
  * Split a string by a given character.
  */
-vector<string> sortIP::splitString(string input, char split_character) const{
+vector<string> sortIP::splitString(const string& input, const char& split_character) const{
 	string cut_string;
 	vector<string> result;
 	stringstream input_stream;
