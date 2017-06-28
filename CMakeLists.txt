@@ -1,5 +1,5 @@
 cmake_minimum_required (VERSION 2.6)
-list( APPEND CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} -O3")
+list( APPEND CMAKE_CXX_FLAGS "-std=c++11 ${CMAKE_CXX_FLAGS} -pg -O3")
       
 project (sortIP)
 
